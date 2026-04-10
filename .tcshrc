@@ -1,0 +1,39 @@
+# Aliases
+alias virc   'nvim ~/.tcshrc'
+alias viinit 'nvim ~/.config/nvim/init.lua'
+
+# Key bindings
+
+# Prompt
+set prompt = '%{\e[32m%}%~%{\e[0m%}%# '
+set rprompt = '%T'
+
+setenv HOME /Users/jason
+
+#cmd — correct command names only
+#all — correct the entire command line
+#complete — correct to the longest unique prefix
+# Show completions on first Tab press
+set autolist
+
+# Enhanced completion (smarter about what to complete)
+set complete = enhanced
+
+# No annoying beep on unique match
+set matchbeep = nomatch
+
+# If there's exactly one match, use it immediately
+set recexact
+
+# Autocorrect commands
+set correct = cmd
+
+# Color completions (if supported)
+set color
+set colors_cwd
+
+setenv CLICOLOR 1
+setenv LSCOLORS "ExGxFxDxCxDxDxhbhdacEc"   # dark bg, cyan dirs (customize as you like)
+
+
+alias config 'git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
