@@ -1,0 +1,50 @@
+  EDITED         STAGED          COMMITTED        PUSHED
+  (changed)   (git add)      (git commit)     (git push)
+┌─────────┐   ┌──────────┐   ┌──────────┐    ┌──────────┐
+│ .zshrc  │──→│ .zshrc   │──→│ commit   │───→│  GitHub  │
+│ .tcshrc │   │ .tcshrc  │   │ with msg │    │          │
+└─────────┘   └──────────┘   └──────────┘    └──────────┘
+   ↑              ↑              ↑               ↑
+  you edited    "git add"    "git commit"    "git push"
+  the file      stages it    saves snapshot   sends to cloud
+
+
+  ┌─────────────────────────────────────────────────────────┐
+  │                    YOUR GIT JOURNEY                      │
+  │                                                          │
+  │  git init                                                 │
+  │    │                                                     │
+  │    ▼                                                     │
+  │  📁 .git/ created  ←  local repo born                    │
+  │    │                                                     │
+  │    ▼                                                     │
+  │  git remote add origin <url>                             │
+  │    │                                                     │
+  │    ▼                                                     │
+  │  🔗 origin = github.com/you/repo  ←  bridge built       │
+  │    │                                                     │
+  │    ▼                                                     │
+  │  git add .  →  git commit -m "..."                       │
+  │    │                                                     │
+  │    ▼                                                     │
+  │  📦 changes saved locally                                │
+  │    │                                                     │
+  │    ▼                                                     │
+  │  git push -u origin main                                 │
+  │    │                                                     │
+  │    ▼                                                     │
+  │  🚀 files uploaded to GitHub!                            │
+  │                                                          │
+  └─────────────────────────────────────────────────────────┘
+
+  movieSlider/              ← your actual folder (real files)
+  ├── .git/                 ← Git's internal database
+  │    ├── objects/         ← stores all versions of all files
+  │    ├── refs/
+  │    │    └── heads/
+  │    │         ├── main   ← just a TEXT FILE containing a commit hash
+  │    │         └── feature← just a TEXT FILE containing a commit hash
+  │    └── ...
+  ├── index.html            ← your current working files
+  ├── style.css
+  └── ...

@@ -1,0 +1,33 @@
+  ─── commit ─── commit ─── commit ────
+         │
+  This whole line is called "main" (or "master")
+  It's just a LABEL for a timeline of changes
+
+
+  Your project's history:
+
+  Time ──────────────────────────────────────►
+  
+  ──●──────●──────●──────●──  "main" branch
+    │      │      │      │
+    v1     v2     v3     v4    (your commits)
+  
+  
+  ──●──────●──────●──────●──  "feature" branch (optional)
+            │      │
+            add    fix
+            nav    bug
+
+  These are NOT folders.
+  They are just LABELS pointing to different timelines of the SAME project.
+
+
+  movieSlider project
+                         │
+          ┌──────────────┼──────────────┐
+          │              │              │
+       "main"       "feature"      "bugfix"
+          │              │              │
+          ●──●──●──●    ●──●          ●──●
+          │  │  │  │    │  │          │  │
+         all same files, same project, different timelines

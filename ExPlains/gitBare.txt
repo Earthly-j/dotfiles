@@ -1,0 +1,31 @@
+NORMAL REPO (one package deal)
+──────────────────────────────
+┌──────────────────────────┐
+│  my-project/             │
+│    ├─ .git/  ← metadata  │
+│    ├─ main.py            │
+│    ├─ README.md          │
+│    └─ ...                │
+└──────────────────────────┘
+files + metadata = bundled together
+
+
+BARE REPO (split apart)
+───────────────────────
+┌─────────────────┐          ┌──────────────────────┐
+│  ~/.dotfiles    │          │  $HOME (work tree)   │
+│  (metadata only)│─────────→│  ~/.zshrc            │
+│                 │  points  │  ~/.vimrc            │
+│  • commits      │   to     │  ~/.config/...       │
+│  • branches     │          │                      │
+│  • history      │          │  (your actual files) │
+│                 │          │                      │
+│  NO files here  │          │  NO .git folder here │
+└─────────────────┘          └──────────────────────┘
+        │
+        │  also points to
+        ▼
+┌─────────────────┐
+│  GitHub         │
+│  (another copy) │
+└─────────────────┘

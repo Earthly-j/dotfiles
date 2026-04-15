@@ -1,0 +1,105 @@
+┌─────────────────────────────────────────────────────────┐
+│  AFTER git init                                          │
+│                                                          │
+│  ┌──────────────┐                                       │
+│  │  Your Mac    │                                       │
+│  │              │                                       │
+│  │  my-project/ │                                       │
+│  │   ├── .git/  │  ← repo exists, but it's ISOLATED    │
+│  │   ├── index.html                                      │
+│  │   └── style.css                                       │
+│  │              │                                       │
+│  └──────────────┘                                       │
+│                                                          │
+│        🔒 No connection to the outside world             │
+└─────────────────────────────────────────────────────────┘
+
+  ┌──────────────────┐                ┌──────────────────┐
+  │    Your Mac       │                │     GitHub        │
+  │                  │                │                  │
+  │  my-project/     │                │  your-repo/      │
+  │   ├── .git/      │                │   ├── README.md  │
+  │   ├── index.html │                │   └── ...        │
+  │   └── style.css  │                │                  │
+  │       │          │                │                  │
+  │       │          │    ??          │                  │
+  │       └──────────┼───────────────┘                  │
+  │                  │                                   │
+  └──────────────────┘                                   │
+                                                        │
+       ❌ Git doesn't know where GitHub IS               │
+
+git remote add origin https://github.com/you/repo.git
+│   │      │   │      │
+│   │      │   │      └── The GitHub URL (WHERE it lives)
+│   │      │   │
+│   │      │   └── The NICKNAME for that remote
+│   │      │         ("origin" is just a convention!)
+│   │      │
+│   │      └── "Register a new connection"
+│   │
+│   └── "Manage remote connections"
+│         (Git can have MULTIPLE remotes)
+│
+└── git itself
+
+  ┌──────────────────┐                ┌──────────────────┐
+  │    Your Mac      │                │     GitHub       │
+  │                  │                │                  │
+  │  my-project/     │                │  your-repo/      │
+  │   ├── .git/      │                │                  │
+  │   ├── index.html │                │                  │
+  │   └── style.css  │                │                  │
+  │       │          │                │                  │
+  │       │          │    "origin"    │                  │
+  │       └──────────┼─────────────── ┤                  │
+  │                  │   ✅ LINKED    │                  │
+  └──────────────────┘                └──────────────────┘
+
+  Now git knows: "origin" = that GitHub repo over there
+
+  git push origin main  ──→  sends files TO GitHub
+  git pull origin main  ──→  brings files FROM GitHuby
+
+
+# ─── VIEWING ───────────────────────────────────────
+
+git remote                    # List all remote names
+git remote -v                 # List with URLs (verbose)
+
+# ─── ADDING / REMOVING ─────────────────────────────
+
+git remote add <name> <url>   # Add a new remote
+git remote remove <name>      # Remove a remote
+git remote rename <old> <new> # Rename a remote
+
+# ─── INSPECTING ────────────────────────────────────
+
+git remote show <name>        # Details about a specific remote
+git remote get-url <name>     # Just show the URL
+
+# ─── MODIFYING ─────────────────────────────────────
+
+git remote set-url <name> <new-url>   # Change the URL
+git remote set-url --push <name> <url> # Change push URL only
+git remote set-head <name> <branch>   # Set default branch
+
+The ones you'll use 90% of the time are:
+
+git remote -v — "what remotes do I have?"
+git remote add origin <url> — "connect to GitHub"
+git remote set-url origin <url> — "fix the URL if it changed"
+
+- origin -
+git remote add  origin  https://github.com/Earthly-j/movieSlider.git
+│               │       │
+│               │       └── The actual address (URL)
+│               │          This is WHERE the repo lives
+│               │
+│               └── Just a NICKNAME you choose
+│                  "origin" is convention, not a rule
+│
+└── The git command (fixed, can't change)
+
+  Name:          Mom              ←  like "origin" (nickname you pick)
+  Phone:    +1-555-0123          ←  like the URL (the real address)

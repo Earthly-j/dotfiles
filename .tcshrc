@@ -37,3 +37,8 @@ setenv LSCOLORS "ExGxFxDxCxDxDxhbhdacEc"   # dark bg, cyan dirs (customize as yo
 
 
 alias config 'git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+
+setenv PATH "/opt/homebrew/bin:/opt/homebrew/sbin:$PATH" #for homebrew path, without this need on and off to apply
+
+

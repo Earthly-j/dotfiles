@@ -2,13 +2,38 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
+SPACESHIP_PROMPT_ORDER=(
+  user          # jason@mac
+  dir           # ~/projects/myapp
+  git           # git:(main) ✚3
+  node          # ⬢ v20
+  python        # 🐍 v3.12
+  docker        # 🐳
+  exec_time     # ── 3s
+  line_sep      # empty line
+  battery       # 🔋 87%
+  jobs          # background jobs count
+  exit_code     # ✘ 127
+  char          # ➜ prompt character
+)
+
+# Turn ON only what you want:
+SPACESHIP_BATTERY_SHOW=true
+SPACESHIP_DOCKER_SHOW=true
+SPACESHIP_KUBECTL_CONTEXT_SHOW=true
+
+# Turn OFF what you don't need:
+SPACESHIP_RUST_SHOW=false
+SPACESHIP_CRYSTAL_SHOW=false
+SPACESHIP_VI_MODE_SHOW=false
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -103,3 +128,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/opt/homebrew/share/flutter/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/jason/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+
+# Created by `pipx` on 2026-04-15 02:35:55
+export PATH="$PATH:/Users/jason/.local/bin"
